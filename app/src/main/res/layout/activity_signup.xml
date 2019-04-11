@@ -9,60 +9,59 @@
     tools:context=".LoginActivity">
     <ImageView
         android:id="@+id/imgLoginLogo"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="70dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="100dp"
         android:src="@drawable/logo_img"/>
     <EditText
-        android:id="@+id/edtLoginName"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/edtsignupID"
+        android:layout_marginTop="70dp"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
         android:paddingLeft="10dp"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:background="@drawable/gray"
-        android:hint="Name"/>
+        android:hint="아이디"/>
     <EditText
-        android:layout_marginTop="4dp"
+
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
         android:paddingLeft="10dp"
         android:background="@drawable/gray"
-        android:id="@+id/edtLoginID"
+        android:id="@+id/edtsignupPW"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:hint="ID"/>
+        android:hint="패스워드"/>
     <EditText
-        android:layout_marginTop="4dp"
+
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
         android:paddingLeft="10dp"
         android:background="@drawable/gray"
-        android:id="@+id/edtLoginPW"
+        android:id="@+id/et_siguup_nmae"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:hint="PW"/>
-    <EditText
-        android:layout_marginTop="4dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/gray"
-        android:id="@+id/edtLoginPWCHECK"
-        android:layout_marginLeft="26dp"
-        android:layout_marginRight="26dp"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="PW Check"/>
+        android:hint="이름"/>
+
     <Button
+        android:textStyle="bold"
+        android:textColor="#ffffff"
         android:id="@+id/btnLoginSubmit"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/gray_border"
         android:text="회원가입"/>
+
 
 </LinearLayout>

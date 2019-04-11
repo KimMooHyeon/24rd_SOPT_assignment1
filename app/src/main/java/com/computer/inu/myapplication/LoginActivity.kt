@@ -34,6 +34,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
     fun postLoginResponse( id: String, pw: String){
-        finish()
+        startActivity<MainActivity>()
     }
 }

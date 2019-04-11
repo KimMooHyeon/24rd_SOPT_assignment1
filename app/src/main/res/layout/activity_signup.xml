@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:background="#ffffff"
+    tools:context=".SignupActivity">
     <ImageView
         android:id="@+id/imgLoginLogo"
         android:layout_marginTop="70dp"
@@ -37,23 +38,24 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:hint="패스워드"/>
+
     <EditText
 
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/gray"
         android:id="@+id/et_siguup_nmae"
-        android:layout_marginLeft="26dp"
-        android:layout_marginRight="26dp"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:hint="이름"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/gray"
+        android:hint="이름"
+        android:paddingLeft="10dp" />
 
     <Button
         android:textStyle="bold"
         android:textColor="#ffffff"
-        android:id="@+id/btnLoginSubmit"
+        android:id="@+id/btnSignUpSubmit"
         android:layout_marginTop="24dp"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"

@@ -8,25 +8,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <ImageView
-        android:id="@+id/imgLoginLogo"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="200dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_img"/>
+<include
+    android:id="@+id/toolbar_main"
+    layout="@layout/toolbar_main"
+    />
     <View
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DBDBDB"/>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 <LinearLayout
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="300dp">
     <android.support.v4.view.ViewPager
-        android:id="@+id/photos_viewpager"
+        android:id="@+id/vp_main_product"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -35,56 +37,16 @@
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabGravity="center"
-        app:tabIndicatorHeight="0dp"
-        android:id="@+id/tab_layout" />
+        app:tabIndicatorColor="@color/colorPrimaryDark"
+        android:id="@+id/tl_main_categoty" />
 </LinearLayout>
+
     <View
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DBDBDB"/>
-<LinearLayout
-    android:background="#ffffff"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <TextView
-        android:gravity="center"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="인기"/>
-    <View
-        android:layout_width="1dp"
-        android:layout_height="60dp"
-        android:background="#DBDBDB"/>
-    <TextView
-        android:gravity="center"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="신작"/>
-    <View
-        android:layout_width="1dp"
-        android:layout_height="60dp"
-        android:background="#DBDBDB"/>
-    <TextView
-        android:gravity="center"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="완결"/>
-</LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -158,4 +120,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DBDBDB"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -2,8 +2,10 @@ package com.computer.inu.myapplication
 
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.computer.inu.fragmentsoptandroidsemina2.SharedPreferenceController
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
@@ -54,5 +56,6 @@ class LoginActivity : AppCompatActivity() {
 
     fun postLoginResponse( id: String, pw: String){
         startActivity<MainActivity>()
+        SharedPreferenceController.setID(this,id)
     }
 }

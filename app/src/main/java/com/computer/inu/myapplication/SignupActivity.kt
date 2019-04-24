@@ -1,9 +1,13 @@
 package com.computer.inu.myapplication
 
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_signup.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class SignupActivity : AppCompatActivity() {
 
@@ -17,7 +21,14 @@ class SignupActivity : AppCompatActivity() {
             if(id =="") edtsignupID.requestFocus()
             else if (pw=="") edtsignupPW.requestFocus()
             else if (name=="") et_siguup_nmae.requestFocus()
-            else finish()
+            else {
+                val simpleDateformat = SimpleDateFormat("dd/M/yyy hh:mm:ss")
+                val e_time = simpleDateformat.format(Date())
+                val intent : Intent= Intent()
+                intent.putExtra("end_time",e_time)
+                setResult(Activity.RESULT_OK,intent)
+                finish()
+            }
         }
         edtsignupID.setOnFocusChangeListener { v, hasFocus ->
             if(hasFocus) v.setBackgroundResource(R.drawable.yellow)

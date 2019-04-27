@@ -22,15 +22,12 @@
             android:gravity="right"
             android:layout_height="wrap_content" android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" android:layout_marginEnd="10dp">
-            <TextView
-                android:id="@+id/txt_toolbar_main_action"
+            <ImageView
+                android:id="@+id/iv_toolbar_main_action"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:gravity="center"
-                android:text="로그인"
-                android:textSize="10dp"
-                android:textStyle="bold"
-                android:textColor="#EC9E00"
+              android:src="@drawable/action_selector"
                 android:layout_alignParentEnd="true"/>
         </LinearLayout>
     </RelativeLayout>

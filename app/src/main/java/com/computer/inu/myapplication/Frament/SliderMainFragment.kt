@@ -6,9 +6,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 
 import com.computer.inu.myapplication.R
 import kotlinx.android.synthetic.main.fragment_slider_main.*
+import org.jetbrains.anko.support.v4.ctx
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,9 +33,11 @@ class SliderMainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val color:Int=arguments!!.getInt("background_color")
-        img_fragment_main.setBackgroundColor(color)
+        val image:String=arguments!!.getString("background_url")
 
+
+
+        Glide.with(ctx).load(image).into(img_fragment_main)
     }
 
 }

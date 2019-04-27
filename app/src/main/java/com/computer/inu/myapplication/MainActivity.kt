@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         configureMainTab()
 
-        txt_toolbar_main_action.setOnClickListener {
+        iv_toolbar_main_action.setOnClickListener {
             if(SharedPreferenceController.getId(this).isNotEmpty()){
                SharedPreferenceController.clearLogin(this)
                 startActivity<LoginActivity>()
@@ -48,9 +48,9 @@ class MainActivity : AppCompatActivity() {
     }
 private fun configureTitleBar(){
     if(SharedPreferenceController.getId(this).isNotEmpty()){
-        txt_toolbar_main_action.setText("로그아웃")
+        iv_toolbar_main_action.isSelected=true
     }else{
-        txt_toolbar_main_action.setText("로그인")
+        iv_toolbar_main_action.isSelected=false
     }
 }
     private fun configureMainTab() {
@@ -71,26 +71,7 @@ private fun configureTitleBar(){
       vp_main_slider.adapter= SliderMainPagerAdapter(supportFragmentManager,3)
         vp_main_slider.offscreenPageLimit=2
         tl_main_indicator.setupWithViewPager(vp_main_slider)
-          val navIndicatorMainLayout : View = (this.getSystemService(android.content.Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(
-              R.layout.navigation_indicator_main,
-              null,
-              false
-          )
-        tl_main_indicator.getTabAt(0)!!.customView=navIndicatorMainLayout.findViewById(R.id.img_nav_indicator_main_1) as ImageView
-        tl_main_indicator.getTabAt(1)!!.customView=navIndicatorMainLayout.findViewById(R.id.img_nav_indicator_main_2) as ImageView
-        tl_main_indicator.getTabAt(2)!!.customView=navIndicatorMainLayout.findViewById(R.id.img_nav_indicator_main_3) as ImageView
-tl_main_indicator.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
-    override fun onTabReselected(p0: TabLayout.Tab?) {
-    }
 
-    override fun onTabUnselected(p0: TabLayout.Tab?) {
-        p0!!.customView!!.setBackgroundColor(resources.getColor(R.color.colorPrimaryGray))
-    }
-
-    override fun onTabSelected(p0: TabLayout.Tab?) {
-        p0!!.customView!!.setBackgroundColor(resources.getColor(R.color.colorPrimaryYellow))
-    }
-})
 
     }
 }

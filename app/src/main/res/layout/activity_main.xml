@@ -31,7 +31,10 @@
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
-    app:tabIndicatorHeight="0dp">
+    app:tabIndicatorHeight="0dp"
+    app:tabGravity="center"
+    app:tabBackground="@drawable/dot_selector"
+    >
 
 </android.support.design.widget.TabLayout>
 
@@ -39,7 +42,7 @@
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/colorPrimaryDark"
+        app:tabIndicatorColor="@color/colorPrimaryYellow"
         android:id="@+id/tl_main_categoty" />
     <View
         android:layout_marginTop="10dp"

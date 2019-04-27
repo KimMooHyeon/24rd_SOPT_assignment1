@@ -8,6 +8,7 @@ import com.computer.inu.myapplication.Frament.EndProductMainFragment
 import com.computer.inu.myapplication.Frament.NewProductMainFragment
 
 class ProductMainPagerAdapter(fm : FragmentManager, private val num_frament: Int):FragmentStatePagerAdapter(fm){
+/*
 companion object {
     private var allProductMainFragment: AllProductMainFragment? = null
     private var newProductMainFragment: NewProductMainFragment? = null
@@ -30,11 +31,12 @@ companion object {
         return newProductMainFragment!!
     }
 }
+*/
 
 
 
     override fun getItem(p0 : Int): Fragment? {
-        return when(0){
+        return when(p0){
             0->AllProductMainFragment()
             1->NewProductMainFragment()
             2-> EndProductMainFragment()

@@ -16,31 +16,31 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DBDBDB"/>
-    <ScrollView
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main_slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="300dp">
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_main_product"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
     </android.support.v4.view.ViewPager>
+<android.support.design.widget.TabLayout
+    android:id="@+id/tl_main_indicator"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    app:tabIndicatorHeight="0dp">
 
+</android.support.design.widget.TabLayout>
+
+</RelativeLayout>
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIndicatorColor="@color/colorPrimaryDark"
         android:id="@+id/tl_main_categoty" />
-</LinearLayout>
-
     <View
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
@@ -51,75 +51,12 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DBDBDB"/>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="#ffffff">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:src="@drawable/webtoon" />
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="#DBDBDB"/>
-    <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:src="@drawable/webtoon"/>
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="#DBDBDB"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:src="@drawable/webtoon"/>
-</LinearLayout>
-    <View
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main_product"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DBDBDB"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#ffffff">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/webtoon" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#DBDBDB"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/webtoon"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#DBDBDB"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/webtoon"/>
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DBDBDB"/>
-        </LinearLayout>
-    </ScrollView>
+
 </LinearLayout>

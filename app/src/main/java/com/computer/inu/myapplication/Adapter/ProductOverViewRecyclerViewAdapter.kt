@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.computer.inu.myapplication.Data.ProductOverviewData
+import com.computer.inu.myapplication.ProductActivity
 import com.computer.inu.myapplication.R
+import org.jetbrains.anko.startActivity
 
 class ProductOverViewRecyclerViewAdapter(val ctx : Context,val dataList : ArrayList<ProductOverviewData>): RecyclerView.Adapter<ProductOverViewRecyclerViewAdapter.Holder>(){
     override fun onBindViewHolder(holder: Holder, position: Int) {
@@ -17,6 +20,10 @@ class ProductOverViewRecyclerViewAdapter(val ctx : Context,val dataList : ArrayL
         holder.author.text=dataList[position].author
         holder.title.text=dataList[position].title
         holder.num_like.text=dataList[position].num_like.toString()
+        holder.rv_product_overview_all.setOnClickListener {
+            ctx.startActivity<ProductActivity>()
+        }
+
     }
 
     override fun getItemCount(): Int=dataList.size
@@ -32,6 +39,7 @@ class ProductOverViewRecyclerViewAdapter(val ctx : Context,val dataList : ArrayL
         var title = itemView.findViewById(R.id.txt_rv_item_product_overview_title) as TextView
         var num_like = itemView.findViewById(R.id.txt_rv_item_product_overview_numlike) as TextView
         var author = itemView.findViewById(R.id.txt_rv_item_product_overview_author) as TextView
+        var rv_product_overview_all = itemView.findViewById(R.id.rv_product_overview_all) as RelativeLayout
     }
 
 

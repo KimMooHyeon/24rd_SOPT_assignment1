@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="74dp">
+
+    <View
+        android:id="@+id/v_top"
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="1.5dp"
+    android:background="@drawable/gray"/>
+    <View
+        android:id="@+id/v_right"
+        android:layout_alignParentRight="true"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray"/>
+    <View
+        android:id="@+id/v_borrtom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@drawable/gray"/>
+    <View
+        android:id="@+id/v_left"
+        android:layout_alignParentLeft="true"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray"/>
+   <ImageView
+       android:layout_toRightOf="@id/v_left"
+       android:layout_below="@+id/v_top"
+       android:id="@+id/iv_product_item"
+       android:src="@drawable/list_muneo_img"
+       android:layout_width="100dp"
+       android:layout_height="68dp" />
+    <View
+        android:id="@+id/v_leftofview"
+        android:layout_toRightOf="@id/iv_product_item"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray"/>
+<TextView
+    android:layout_marginTop="14dp"
+    android:layout_marginLeft="16dp"
+    android:textStyle="bold"
+    android:textSize="18dp"
+    android:layout_below="@id/v_top"
+    android:layout_toRightOf="@+id/v_leftofview"
+    android:id="@+id/tv_webtoon_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#000000"
+    android:text="1화. 문어지지 말자!"/>
+    <TextView
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="15dp"
+        android:layout_below="@id/tv_webtoon_title"
+        android:layout_toRightOf="@+id/v_leftofview"
+        android:id="@+id/tv_webtoon_hits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="조회수 "/>
+    <TextView
+        android:layout_marginTop="4dp"
+        android:textSize="15dp"
+        android:layout_below="@id/tv_webtoon_title"
+        android:layout_toRightOf="@+id/tv_webtoon_hits"
+        android:id="@+id/tv_webtoon_hitsnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13만회"/>
+    <TextView
+    android:layout_marginTop="4dp"
+    android:textSize="15dp"
+    android:layout_below="@id/tv_webtoon_title"
+       android:layout_alignParentRight="true"
+        android:layout_marginRight="140dp"
+    android:id="@+id/tv_webtoon_day"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="19.03.26"/>
+</RelativeLayout>

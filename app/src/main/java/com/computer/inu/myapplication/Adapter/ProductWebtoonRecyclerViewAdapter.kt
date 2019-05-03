@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.computer.inu.myapplication.Data.ProductWebtoonData
+import com.computer.inu.myapplication.InWebToonActivity
 import com.computer.inu.myapplication.R
+import org.jetbrains.anko.startActivity
 
 class ProductWebtoonRecyclerViewAdapter(val ctx : Context, val dataList : ArrayList<ProductWebtoonData>): RecyclerView.Adapter<ProductWebtoonRecyclerViewAdapter.Holder>(){
     override fun onBindViewHolder(holder: Holder, position: Int) {
@@ -17,6 +20,9 @@ class ProductWebtoonRecyclerViewAdapter(val ctx : Context, val dataList : ArrayL
         holder.date.text=dataList[position].date
         holder.title.text=dataList[position].title
         holder.hit_num.text=dataList[position].hitnum.toString()
+    holder.rl_product_all.setOnClickListener {
+      ctx.startActivity<InWebToonActivity>()
+    }
     }
 
     override fun getItemCount(): Int=dataList.size
@@ -32,6 +38,7 @@ class ProductWebtoonRecyclerViewAdapter(val ctx : Context, val dataList : ArrayL
         var title = itemView.findViewById(R.id.tv_webtoon_title) as TextView
         var hit_num = itemView.findViewById(R.id.tv_webtoon_hitsnumber) as TextView
         var date = itemView.findViewById(R.id.tv_webtoon_day) as TextView
+        var rl_product_all = itemView.findViewById(R.id.rl_product_all) as RelativeLayout
     }
 
 

@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProductActivity"></activity>
+        <activity android:name=".CommentActivity"></activity>
+        <activity android:name=".InWebToonActivity" />
+        <activity android:name=".ProductActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">

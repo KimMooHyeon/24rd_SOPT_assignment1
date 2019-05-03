@@ -10,28 +10,28 @@
         android:paddingHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-<ImageView
-    android:layout_width="20dp"
-    android:layout_height="20dp"
-    android:id="@+id/btn_toolbar_product_back"
-    android:src="@drawable/back_btn"
-    android:layout_weight="0"
-    />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/btn_toolbar_commnet_back"
+            android:src="@drawable/back_btn"
+            android:layout_weight="0"
+            />
         <TextView
-            android:id="@+id/txt_toolbar_product_title"
+            android:id="@+id/txt_toolbar_comment_title"
             android:layout_width="wrap_content"
             android:paddingLeft="20dp"
-            android:text="무너의삶"
+            android:text="댓글(1,500)"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="16dp"
             android:textColor="#484848"
             android:textStyle="bold"/>
-<ImageView
-    android:id="@+id/iv_toolbar_heart"
-    android:layout_width="20dp"
-    android:layout_height="20dp"
-    android:src="@drawable/heart_selector"/>
+        <ImageView
+            android:id="@+id/iv_toolbar_comment_heart"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/like_fill"/>
 
     </LinearLayout>
 </android.support.v7.widget.Toolbar>

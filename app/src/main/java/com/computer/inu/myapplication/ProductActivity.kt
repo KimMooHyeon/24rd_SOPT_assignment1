@@ -8,12 +8,16 @@ import com.computer.inu.myapplication.Adapter.ProductOverViewRecyclerViewAdapter
 import com.computer.inu.myapplication.Adapter.ProductWebtoonRecyclerViewAdapter
 import com.computer.inu.myapplication.Data.ProductWebtoonData
 import kotlinx.android.synthetic.main.activity_product.*
+import kotlinx.android.synthetic.main.toolbar_product.*
 
 class ProductActivity : AppCompatActivity() {
     lateinit var productWebtoonRecyclerViewAdapter: ProductWebtoonRecyclerViewAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
+        btn_toolbar_product_back.setOnClickListener {
+            finish()
+        }
         var dataList: ArrayList<ProductWebtoonData> = ArrayList()
         dataList.add(
             ProductWebtoonData(

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="102dp">
+<ImageView
+    android:id="@+id/iv_comment_image"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:src="@drawable/defaultpicture"/>
+    <TextView
+        android:id="@+id/tv_comment_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="솝러버"
+        android:textSize="18dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:textColor="#000000"
+        android:layout_toRightOf="@id/iv_comment_image"/>
+    <TextView
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/tv_comment_contents"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="문어에 대한 내용이 이"
+        android:textSize="15dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@+id/tv_comment_name"
+        android:layout_toRightOf="@id/iv_comment_image"/>
+    <TextView
+        android:layout_marginLeft="4dp"
+        android:id="@+id/tv_commnet_time"
+        android:layout_marginTop="22dp"
+        android:text="hello"
+        android:textSize="10dp"
+        android:textColor="#CECECE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_commnent_date"/>
+    <TextView
+        android:textColor="#CECECE"
+        android:layout_marginLeft="4dp"
+        android:id="@+id/tv_commnent_date"
+        android:layout_marginTop="22dp"
+        android:text="hello"
+        android:textSize="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_comment_name"/>
+</RelativeLayout>

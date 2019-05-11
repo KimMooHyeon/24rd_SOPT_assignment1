@@ -7,21 +7,18 @@ object SharedPreferenceController {
 
     private val LOGIN = "LOGIN"
 
-    //자동로그인 설정
-    fun setID(context: Context, authorization: String) {
+    fun setToken(context: Context, authorization: String) {
         val pref = context.getSharedPreferences(LOGIN, Context.MODE_PRIVATE)
         val editor = pref.edit()
         editor.putString("u_id", authorization)
         editor.commit()
     }
-    //자동로그인
-    fun getId(context: Context): String {
+    fun getToken(context: Context): String {
         val pref = context.getSharedPreferences(LOGIN, Context.MODE_PRIVATE)
         return pref.getString("u_id", "")
     }
 
-    //자동로그인 토큰
-    fun clearLogin(context: Context) {
+    fun clearToken(context: Context) {
         val pref = context.getSharedPreferences(LOGIN, Context.MODE_PRIVATE)
         val editor = pref.edit()
         editor.clear()

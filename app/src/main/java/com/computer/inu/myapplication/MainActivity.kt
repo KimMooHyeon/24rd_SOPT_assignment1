@@ -6,11 +6,8 @@ import android.support.v4.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import android.graphics.drawable.Drawable
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.computer.inu.fragmentsoptandroidsemina2.ProductMainPagerAdapter
 import com.computer.inu.fragmentsoptandroidsemina2.SharedPreferenceController
@@ -33,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         configureMainTab()
 
         iv_toolbar_main_action.setOnClickListener {
-            if(SharedPreferenceController.getId(this).isNotEmpty()){
-               SharedPreferenceController.clearLogin(this)
+            if(SharedPreferenceController.getToken(this).isNotEmpty()){
+               SharedPreferenceController.clearToken(this)
                 startActivity<LoginActivity>()
             }
         }
@@ -47,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         configureTitleBar()
     }
 private fun configureTitleBar(){
-    if(SharedPreferenceController.getId(this).isNotEmpty()){
+    if(SharedPreferenceController.getToken(this).isNotEmpty()){
         iv_toolbar_main_action.isSelected=true
     }else{
         iv_toolbar_main_action.isSelected=false

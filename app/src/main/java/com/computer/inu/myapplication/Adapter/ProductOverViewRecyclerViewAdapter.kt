@@ -14,12 +14,12 @@ import com.computer.inu.myapplication.ProductActivity
 import com.computer.inu.myapplication.R
 import org.jetbrains.anko.startActivity
 
-class ProductOverViewRecyclerViewAdapter(val ctx : Context,val dataList : ArrayList<ProductOverviewData>): RecyclerView.Adapter<ProductOverViewRecyclerViewAdapter.Holder>(){
+class ProductOverViewRecyclerViewAdapter(val ctx : Context, var dataList : ArrayList<ProductOverviewData>): RecyclerView.Adapter<ProductOverViewRecyclerViewAdapter.Holder>(){
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        Glide.with(ctx).load(dataList[position].img_url).into(holder.img_thumbnail)
-        holder.author.text=dataList[position].author
+        Glide.with(ctx).load(dataList[position].thumnail).into(holder.img_thumbnail)
+        holder.author.text=dataList[position].name
         holder.title.text=dataList[position].title
-        holder.num_like.text=dataList[position].num_like.toString()
+        holder.num_like.text=dataList[position].likes.toString()
         holder.rv_product_overview_all.setOnClickListener {
             ctx.startActivity<ProductActivity>()
         }

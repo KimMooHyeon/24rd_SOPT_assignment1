@@ -4,11 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.computer.inu.myapplication.Adapter.CommentRecyclerViewAdapter
-import com.computer.inu.myapplication.Adapter.ProductWebtoonRecyclerViewAdapter
 import com.computer.inu.myapplication.Data.CommentData
 import kotlinx.android.synthetic.main.activity_comment.*
-import kotlinx.android.synthetic.main.activity_product.*
 import kotlinx.android.synthetic.main.toolbar_comment.*
+import org.jetbrains.anko.startActivity
 
 class CommentActivity : AppCompatActivity() {
     lateinit var commentRecyclerViewAdapter: CommentRecyclerViewAdapter
@@ -18,7 +17,9 @@ class CommentActivity : AppCompatActivity() {
         btn_toolbar_commnet_back.setOnClickListener {
             finish()
         }
-
+        btn_comment_write.setOnClickListener {
+            startActivity<WriteCommentActivity>()
+        }
         var dataList: ArrayList<CommentData> = ArrayList()
         dataList.add(CommentData("http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png","솝러버","23.21.38","19.03.25","문어에 대한 내용이 아주 유익하네요. 추천드려요! 다들 꼭 보시길~^^"))
         dataList.add(CommentData("http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png","솝맘","23.25.38","19.03.25","타코야끼가 생각나는 웹툰이에요^^ 타코야끼먹으면서 읽는거 추천~!"))

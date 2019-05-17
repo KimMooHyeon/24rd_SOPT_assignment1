@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".WriteCommentActivity">
+
+    <include
+        android:id="@+id/toolbar_write_comment"
+        layout="@layout/toolbar_write_comment"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#F1F1F1"
+        />
+    <TextView
+        android:id="@+id/tv_write_commnet_contents"
+        android:textSize="17dp"
+        android:padding="16dp"
+        android:textColor="#C4C4C4"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:hint="여기를 눌러서 글을 작성할 수 있습니다. \n깅스에서 당신의 창업 이야기를 들려주세요 \n이미지는 최대 4장까지 첨부 가능합니다."/>
+    <LinearLayout
+        android:background="#F1F1F1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/iv_write_write_roll"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="2.5dp"
+            android:layout_marginTop="2.5dp"
+            android:src="@drawable/writing_plus_btn" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/iv_write_comment_camera"
+            android:layout_marginLeft="16dp"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera_btn"/>
+    </RelativeLayout>
+</LinearLayout>

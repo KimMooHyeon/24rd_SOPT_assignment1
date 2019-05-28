@@ -21,7 +21,7 @@ class ProductOverViewRecyclerViewAdapter(val ctx : Context, var dataList : Array
         holder.title.text=dataList[position].title
         holder.num_like.text=dataList[position].likes.toString()
         holder.rv_product_overview_all.setOnClickListener {
-            ctx.startActivity<ProductActivity>()
+            ctx.startActivity<ProductActivity>("title" to holder.title.text,"idx" to dataList[position].idx)
         }
 
     }

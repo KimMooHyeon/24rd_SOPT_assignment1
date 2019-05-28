@@ -2,6 +2,7 @@ package com.computer.inu.myapplication.Network
 
 import android.app.Activity
 import android.app.Application
+import com.computer.inu.myapplication.Network.Get.GetWebtoonMainImageResponse
 import com.computer.inu.myapplication.Network.Get.GetWebtoonMainResponse
 import com.computer.inu.myapplication.Network.Post.PostCommentResponse
 import com.computer.inu.myapplication.Network.Post.PostLoginResponse
@@ -33,6 +34,10 @@ interface NetworkService {
         @Header("Content-Type") content_type: String,
         @Path("flag") flag : Int
     ): Call<GetWebtoonMainResponse>
+    
+    @GET("/api/webtoons/main/img")
+    fun getWebtoonMainImageResponse(
+    ): Call<GetWebtoonMainImageResponse>
     @Multipart
     @POST("/api/webtoons/episodes/cmts")
     fun postCommentResponse(

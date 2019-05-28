@@ -6,28 +6,37 @@ import android.support.v4.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
 import com.computer.inu.fragmentsoptandroidsemina2.ProductMainPagerAdapter
 import com.computer.inu.fragmentsoptandroidsemina2.SharedPreferenceController
+import com.computer.inu.myapplication.Network.ApplicationController
+import com.computer.inu.myapplication.Network.Get.GetWebtoonMainImageResponse
+import com.computer.inu.myapplication.Network.NetworkService
+import com.computer.inu.myapplication.Network.Post.PostLoginResponse
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.toolbar_main.*
+import org.jetbrains.anko.ctx
+import org.jetbrains.anko.toast
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
 
+    val networkService : NetworkService by lazy {
+        ApplicationController.instance.networkService
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val temp: List<Drawable>
-        temp = ArrayList()
-        temp.add(ContextCompat.getDrawable(this,R.drawable.monnjaein)!!);
-        temp.add(ContextCompat.getDrawable(this,R.drawable.hongjunpyo)!!);
-        temp.add(ContextCompat.getDrawable(this,R.drawable.youseounmin)!!);
+        getMainImageResponse()
 
-
-
-        configureMainTab()
 
         iv_toolbar_main_action.setOnClickListener {
             if(SharedPreferenceController.getToken(this).isNotEmpty()){
@@ -37,7 +46,23 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    fun getMainImageResponse(){
+        var getWebtoonMainImageResponse: Call<GetWebtoonMainImageResponse> = networkService.getWebtoonMainImageResponse()
+        getWebtoonMainImageResponse.enqueue(object : Callback<GetWebtoonMainImageResponse> {
+            override fun onResponse(call: Call<GetWebtoonMainImageResponse>?, response: Response<GetWebtoonMainImageResponse>?) {
+                Log.v("TAG", "보드 서버 통신 연결")
+                if (response!!.isSuccessful) {
+                    if(response.body()!!.status==200) {
+                        configureMainTab(response.body()!!.data!!)
+                    }
 
+                }
+            }
+            override fun onFailure(call: Call<GetWebtoonMainImageResponse>?, t: Throwable?) {
+                Log.v("TAG", "통신 실패 = " +t.toString())
+            }
+        })
+    }
 
     override fun onResume() {
         super.onResume()
@@ -50,7 +75,7 @@ private fun configureTitleBar(){
         iv_toolbar_main_action.isSelected=false
     }
 }
-    private fun configureMainTab() {
+    private fun configureMainTab( img : ArrayList<String>) {
         vp_main_product.adapter = ProductMainPagerAdapter(supportFragmentManager, 3)
         vp_main_product.offscreenPageLimit = 2
         tl_main_categoty.setupWithViewPager(vp_main_product)
@@ -64,11 +89,8 @@ private fun configureTitleBar(){
         tl_main_categoty.getTabAt(0)!!.customView=navCategoryMainLayout.findViewById(R.id.rl_nav_category_main_all) as RelativeLayout
         tl_main_categoty.getTabAt(1)!!.customView=navCategoryMainLayout.findViewById(R.id.rl_nav_category_main_new) as RelativeLayout
         tl_main_categoty.getTabAt(2)!!.customView=navCategoryMainLayout.findViewById(R.id.rl_nav_category_main_end) as RelativeLayout
-
-      vp_main_slider.adapter= SliderMainPagerAdapter(supportFragmentManager,3)
+      vp_main_slider.adapter= SliderMainPagerAdapter(supportFragmentManager,3,img)
         vp_main_slider.offscreenPageLimit=2
         tl_main_indicator.setupWithViewPager(vp_main_slider)
-
-
     }
 }

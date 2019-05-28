@@ -18,6 +18,7 @@ class ProductActivity : AppCompatActivity() {
         btn_toolbar_product_back.setOnClickListener {
             finish()
         }
+        txt_toolbar_product_title.setText(intent.getStringExtra("title"))
         var dataList: ArrayList<ProductWebtoonData> = ArrayList()
         dataList.add(
             ProductWebtoonData(
@@ -39,7 +40,7 @@ class ProductActivity : AppCompatActivity() {
         dataList.add(ProductWebtoonData(
             "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "6화. 배부른 문어","13만회","19.03.30"))
-        productWebtoonRecyclerViewAdapter = ProductWebtoonRecyclerViewAdapter(this,dataList)
+        productWebtoonRecyclerViewAdapter = ProductWebtoonRecyclerViewAdapter(this,dataList,intent.getIntExtra("idx",-1),intent.getStringExtra("title"))
         rv_product.adapter=productWebtoonRecyclerViewAdapter
         rv_product.layoutManager= LinearLayoutManager(this)
     }

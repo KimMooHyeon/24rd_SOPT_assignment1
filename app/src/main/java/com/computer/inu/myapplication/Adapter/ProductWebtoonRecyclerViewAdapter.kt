@@ -14,14 +14,14 @@ import com.computer.inu.myapplication.InWebToonActivity
 import com.computer.inu.myapplication.R
 import org.jetbrains.anko.startActivity
 
-class ProductWebtoonRecyclerViewAdapter(val ctx : Context, val dataList : ArrayList<ProductWebtoonData>): RecyclerView.Adapter<ProductWebtoonRecyclerViewAdapter.Holder>(){
+class ProductWebtoonRecyclerViewAdapter(val ctx : Context, val dataList : ArrayList<ProductWebtoonData>, val idx : Int,val title:String): RecyclerView.Adapter<ProductWebtoonRecyclerViewAdapter.Holder>(){
     override fun onBindViewHolder(holder: Holder, position: Int) {
         Glide.with(ctx).load(dataList[position].img).into(holder.img)
         holder.date.text=dataList[position].date
         holder.title.text=dataList[position].title
         holder.hit_num.text=dataList[position].hitnum.toString()
     holder.rl_product_all.setOnClickListener {
-      ctx.startActivity<InWebToonActivity>()
+      ctx.startActivity<InWebToonActivity>("idx" to idx,"title" to title)
     }
     }
 

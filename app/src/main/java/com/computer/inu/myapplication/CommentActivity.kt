@@ -18,7 +18,7 @@ class CommentActivity : AppCompatActivity() {
             finish()
         }
         btn_comment_write.setOnClickListener {
-            startActivity<WriteCommentActivity>()
+            startActivity<WriteCommentActivity>("idx" to intent.getIntExtra("idx",-1),"episode_id" to 1)
         }
         var dataList: ArrayList<CommentData> = ArrayList()
         dataList.add(CommentData("http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png","솝러버","23.21.38","19.03.25","문어에 대한 내용이 아주 유익하네요. 추천드려요! 다들 꼭 보시길~^^"))

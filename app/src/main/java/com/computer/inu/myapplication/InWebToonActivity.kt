@@ -11,10 +11,11 @@ class InWebToonActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_in_web_toon)
         iv_toolbar_heart.setOnClickListener {
-          startActivity<CommentActivity>()
+          startActivity<CommentActivity>("idx" to intent.getIntExtra("idx",-1))
         }
         btn_toolbar_product_back.setOnClickListener {
             finish()
         }
+        txt_toolbar_product_title.setText(intent.getStringExtra("title"))
     }
 }
